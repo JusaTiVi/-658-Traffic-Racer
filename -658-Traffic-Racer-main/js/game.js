@@ -119,8 +119,6 @@ function gameCycle() {
 
 gameCycle();
 
-bgImg.onload = imageLoadedCallback;
-carImg.onload = imageLoadedCallback;
 
 // I slightly stretched the image to suit different devices. XD 
 // Make it so that obstacles appear once the first background has changed.
