@@ -19,19 +19,30 @@ const Bghitbox = {
     yDown: 950,
 }
 
+//obstacle properties
+const Obstaclewidth = 30;
+const Obstacleheight = 30;
+const obstacles = [];
 
+//obstacle spawn point
+const Obstacle = {
+    y: 100,
+    x: Math.random() * (canvas.width - Obstaclewidth),
+}
+
+obstacles.push(Obstacle);
 
 //spawn point 
 
 const player = {
     x: 350,         
-    y: 230,         
+    y: 600,         
     width: 100,
     height: 180
 };
-// speed with wich go BG 
+// speed with which go BG 
 let BgSpeed = 5;
-// speed with wich go car 
+// speed with which go car 
 let speed = 10;
 // vertical position of the image on the screen
 let bgY = 0; 
@@ -51,7 +62,6 @@ function draw() {
     ctx.drawImage(bgImg, 0, bgY, canvas.width, canvas.height);
 
     ctx.drawImage(bgImg, 0, bgY - canvas.height, canvas.width, canvas.height);
-
 
     ctx.drawImage(carImg, player.x, player.y, player.width, player.height);
     
@@ -93,7 +103,7 @@ window.addEventListener("keydown", function(event) {
    
     window.addEventListener("keydown", function(event) {
     if (event.key === "ArrowDown") {
-        BgSpeed = 3; // slows down if keydown presed 
+        BgSpeed = 3; // slows down if keydown pressed 
     }
     });
 
