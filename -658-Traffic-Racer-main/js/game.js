@@ -66,15 +66,6 @@ function draw() {
     ctx.drawImage(carImg, player.x, player.y, player.width, player.height);
     
 }
-// for debugging, so that things load one by one
-
-let imagesLoaded = 0;
-function imageLoadedCallback() {
-    imagesLoaded++;
-    if (imagesLoaded === 2) {
-        draw(); 
-    }
-}
 
 // control 
 window.addEventListener("keydown", function(event) {
