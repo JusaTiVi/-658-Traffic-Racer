@@ -8,6 +8,8 @@ bgImg.src = "../pictures/bg.png";
 const carImg = new Image();
 carImg.src = "../pictures/car.png";
 
+const npcImg = new Image();
+npcImg.src = "../pictures/grayCar.png";
 
 
 //hitbox in background
@@ -19,18 +21,17 @@ const Bghitbox = {
     yDown: 950,
 }
 
-//obstacle properties
-const Obstaclewidth = 30;
-const Obstacleheight = 30;
-const obstacles = [];
+//obstacle properties (currently obsolete)
+//const Obstaclewidth = 30;
+//const Obstacleheight = 30;
+//const obstacles = [];
 
 //obstacle spawn point
-const Obstacle = {
-    y: 100,
-    x: Math.random() * (canvas.width - Obstaclewidth),
-}
+//const Obstacle = {
+//    x: Math.random() * (canvas.width - Obstaclewidth),
+//    y: 50,}
 
-obstacles.push(Obstacle);
+//obstacles.push(Obstacle);
 
 //spawn point 
 
@@ -44,6 +45,8 @@ const player = {
 let BgSpeed = 5;
 // speed with which go car 
 let speed = 10;
+// npcs movement speed
+let npcSpeed = 2;
 // vertical position of the image on the screen
 let bgY = 0; 
 
