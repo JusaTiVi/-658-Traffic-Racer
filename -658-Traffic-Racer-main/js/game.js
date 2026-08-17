@@ -33,6 +33,7 @@ const Bghitbox = {
 
 //obstacles.push(Obstacle);
 
+
 //spawn point 
 
 const player = {
@@ -45,21 +46,63 @@ const player = {
 let BgSpeed = 5;
 // speed with which go car 
 let speed = 10;
-// npcs movement speed
+// NPCs movement speed
 let npcSpeed = 2;
 // vertical position of the image on the screen
 let bgY = 0; 
 
+//how far the road has travelled
+let distance = 0;
 
+//NPCs spawn after one background screen
+const spawnStartDistance = canvas.height;
+
+//distance travelled for next NPC spawn
+let nextSpawn = spawnStartDistance;
+
+//NPCs
+const npcs = [];
+
+function spawnNPC() {
+    const npcWidth = 100;
+    const npcHeight = 180;
+
+    const minX = Bghitbox.xLeft;
+    const maxX = Bghitbox.xRight - npcWidth;
+    const randomX = Math.floor(Math.random() * (maxX - minX + 1)) + minX;
+
+    npcs.push({
+        x: randomX,
+        y: -npcHeight,
+        width:npcWidth,
+        height: npcHeight
+    });
+}
+
+//update NPCs
+function updateNPCs() {
+    for (let i = npcs.length -1; i >= 0; i--) {
+
+        npcs[i].y += npcSpeed;
+
+        //remove offscreen NPCs
+        if (npcs[i].y > canvas.height) {
+            npcs.splice(i, 1)
+        }
+    }
+}
 // creates an infinite background scroll (loop) using two images that alternate with each other
 
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
+    //bgY resets, distance doesn't, I seperated the two just in case you want to make mechanics that react with how far you are in the game
     bgY += BgSpeed;
 
+    distance += BgSpeed;
+
     if (bgY >= canvas.height) {
-        bgY = 0;  //123
+        bgY = 0;
     }
 
     ctx.drawImage(bgImg, 0, bgY, canvas.width, canvas.height);
@@ -68,8 +111,23 @@ function draw() {
 
     ctx.drawImage(carImg, player.x, player.y, player.width, player.height);
     
-}
+    
 
+    //NPC spawning
+
+    if (distance >= nextSpawn) {
+        spawnNPC();
+
+        //decides how much distance is needed for the next npc to spawm
+        nextSpawn += 300 + Math.random() * 400;
+    }
+
+    updateNPCs();
+
+    for (const npc of npcs) {
+        ctx.drawImage(npcImg, npc.x, npc.y, npc.width, npc.height);
+    }
+}
 // control 
 window.addEventListener("keydown", function(event) {
     if (event.key === "ArrowLeft" && player.x > Bghitbox.xLeft) {
@@ -123,7 +181,4 @@ function gameCycle() {
 gameCycle();
 
 
-// I slightly stretched the image to suit different devices. XD 
-// Make it so that obstacles appear once the first background has changed.
-// I marked the moment with the comment "123".
-// Although, you'd better just do as you see fit.
+// it is quite clunky for now, but it's a start
