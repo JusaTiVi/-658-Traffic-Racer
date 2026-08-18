@@ -119,7 +119,7 @@ function draw() {
         spawnNPC();
 
         //decides how much distance is needed for the next npc to spawm
-        nextSpawn += 300 + Math.random() * 400;
+        nextSpawn += 500 + Math.random() * 400;
     }
 
     updateNPCs();
@@ -153,16 +153,16 @@ window.addEventListener("keydown", function(event) {
     }
     
    
-    window.addEventListener("keydown", function(event) {
+window.addEventListener("keydown", function(event) {
     if (event.key === "ArrowDown") {
         BgSpeed = 3; // slows down if keydown pressed 
     }
     });
 
-    window.addEventListener("keyup", function(event) {
-        if (event.key === "ArrowDown") {
+window.addEventListener("keyup", function(event) {
+    if (event.key === "ArrowDown") {
             BgSpeed = 5; // cancels
-        }
+    }
     });
 
 
