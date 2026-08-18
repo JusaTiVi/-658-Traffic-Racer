@@ -47,7 +47,7 @@ let BgSpeed = 5;
 // speed with which go car 
 let speed = 10;
 // NPCs movement speed
-let npcSpeed = 2;
+let npcSpeed = 3;
 // vertical position of the image on the screen
 let bgY = 0; 
 
@@ -155,13 +155,15 @@ window.addEventListener("keydown", function(event) {
    
 window.addEventListener("keydown", function(event) {
     if (event.key === "ArrowDown") {
-        BgSpeed = 3; // slows down if keydown pressed 
+        BgSpeed = 3; // slows down if keydown pressed
+        npcSpeed = 1;
     }
     });
 
 window.addEventListener("keyup", function(event) {
     if (event.key === "ArrowDown") {
             BgSpeed = 5; // cancels
+            npcSpeed = 3;
     }
     });
 
