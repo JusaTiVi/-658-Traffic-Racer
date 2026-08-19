@@ -257,7 +257,7 @@ function Shop() {
 
 
 canvas.addEventListener("click", function(event) {
-
+    if (!openShop) return;
     const rect = canvas.getBoundingClientRect();
     const scaleX = canvas.width / rect.width;
     const scaleY = canvas.height / rect.height;
