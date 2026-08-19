@@ -293,7 +293,8 @@ function spawnNPC() {
         x: randomX,
         y: -npcHeight,
         width:npcWidth,
-        height: npcHeight
+        height: npcHeight,
+
     });
 }
 
@@ -303,11 +304,15 @@ function updateNPCs() {
 
         npcs[i].y += npcSpeed;
 
+        if (CollisionCheck(player, npcs[i])) {
+            console.log("dead")
+        }
         //remove offscreen NPCs
         if (npcs[i].y > canvas.height) {
             npcs.splice(i, 1)
         }
     }
+
 }
 // creates an infinite background scroll (loop) using two images that alternate with each other
 
@@ -375,6 +380,22 @@ window.addEventListener("keydown", function(event) {
         npcSpeed = 1;
     }
 });
+
+//checks the player collision to npcs (based on distance from the object), I decided not to utilize hitboxes, though this is only reasonable because of the size of the game
+function CollisionCheck(player, npc) {
+    const playerCenterX = player.x + player.width / 2;
+    const playerCenterY = player.y + player.height / 2;
+
+    const npcCenterX = npc.x + npc.width / 2;
+    const npcCenterY = npc.y + npc.height /2;
+
+    const distance = Math.hypot(
+        playerCenterX - npcCenterX,
+        playerCenterY - npcCenterY
+    )
+
+    return distance < 100;
+}
 
 
 window.addEventListener("keyup", function(event) {
