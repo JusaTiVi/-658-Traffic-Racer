@@ -12,6 +12,7 @@ const npcImg = new Image();
 npcImg.src = "../pictures/grayCar.png";
 
 
+
 //hitbox in background
 
 const Bghitbox = {
@@ -60,7 +61,7 @@ const spawnStartDistance = canvas.height;
 //distance travelled for next NPC spawn
 let nextSpawn = spawnStartDistance;
 
-
+let Liikenneonnettomuus = false; // variable to track if a collision has occurred
 
 //NPCs
 const npcs = [];
@@ -175,7 +176,9 @@ window.addEventListener("keydown", function(event) {
             BgSpeed = 0;
             npcSpeed = 0; // Freeze NPCs when shop is open 
         }
-        else {
+        if (openShop == false && Liikenneonnettomuus == false)
+        {
+
             BgSpeed = 5;
             npcSpeed = 3;
         }
@@ -306,6 +309,10 @@ function updateNPCs() {
 
         if (CollisionCheck(player, npcs[i])) {
             console.log("dead")
+            speed = 0;
+            BgSpeed = 0;
+            npcSpeed = 0;
+            Liikenneonnettomuus = true; // set the collision flag to true
         }
         //remove offscreen NPCs
         if (npcs[i].y > canvas.height) {
@@ -387,14 +394,15 @@ function CollisionCheck(player, npc) {
     const playerCenterY = player.y + player.height / 2;
 
     const npcCenterX = npc.x + npc.width / 2;
-    const npcCenterY = npc.y + npc.height /2;
+    const npcCenterY = npc.y + npc.height /1.5;
 
     const distance = Math.hypot(
         playerCenterX - npcCenterX,
-        playerCenterY - npcCenterY
+        playerCenterY - npcCenterY 
     )
 
-    return distance < 100;
+    return distance < 80;
+    
 }
 
 
