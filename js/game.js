@@ -254,6 +254,10 @@ function Shop() {
     }
 }
 
+function lossScreen() {
+    document.getElementById("loss").style.display = "block";
+}
+
 
 
 canvas.addEventListener("click", function(event) {
@@ -312,6 +316,7 @@ function updateNPCs() {
             speed = 0;
             BgSpeed = 0;
             npcSpeed = 0;
+            lossScreen()
             Liikenneonnettomuus = true; // set the collision flag to true
         }
         //remove offscreen NPCs
