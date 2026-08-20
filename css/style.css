@@ -23,6 +23,20 @@ canvas {
     cursor: pointer;
 }
 
+#restartBtn {
+    margin-left: 1100px;
+    margin-top: 700px;
+    padding: 12px 30px;
+    font-size: 24px;
+    
+    color: white;
+    background-color: #e74c3c;
+    
+    
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
 #text {
     position: absolute;
     top: 50%;
@@ -32,4 +46,8 @@ canvas {
     transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
 
+}
+
+#restartBtn:hover {
+    background-color: #c0392b;
 }

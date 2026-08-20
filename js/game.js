@@ -399,7 +399,7 @@ function CollisionCheck(player, npc) {
     const playerCenterY = player.y + player.height / 2;
 
     const npcCenterX = npc.x + npc.width / 2;
-    const npcCenterY = npc.y + npc.height /1.5;
+    const npcCenterY = npc.y + npc.height ;
 
     const distance = Math.hypot(
         playerCenterX - npcCenterX,
@@ -429,5 +429,8 @@ function gameCycle() {
 
 gameCycle();
 
+document.getElementById("restartBtn").addEventListener("click", function() {
+    location.reload();
+});
 
 // it is quite clunky for now, but it's a start
