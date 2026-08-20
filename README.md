@@ -9,3 +9,14 @@
 
 **Käytetty työaika:**
 * Yhteensä noin 10-15 tuntia.
+
+### Minun osuuteni projektissa (Jusa Itkonen)
+
+**Tehdyt ominaisuudet:**
+* **esteet (autot):** Kehitin peliin muut autot, joihin törmätessä pelaaja häviää, ja näiden autojen liikkumisen, katoamisen näytöstä poistuessa, luomisen arvaamattomiin kohtiin, ja näiden mukana pelaajan ja esteen välisen tunnistamisen osumisesta, päätin myös käyttää etäisyyttä osumalaatikoiden sijaan. minulla ei ollut aiempaa kokemusta tästä, joten tässä vaiheessa kului noin 8 tuntia.
+* **loppuvalikko: (game over menu):** toteutin peliin häviämisnäytön, joka ilmestyy näytölle jos menet liian lähelle toista autoa, Yevhen myös auttoi loppunäytön toteuttamisessa. tähän vaiheeseen kului noin 3 tuntia.
+
+**käytetty työaika:**
+* yhteensä noin 11 tuntia
+
+* grafiikat toteuttanut tekoäly
