@@ -76,7 +76,7 @@ buyButton.src = "./pictures/Shop/BUY_button.png";
 
 
 let shop_Window = new Image();
-shop_Window.src = "./pictures/Shop/Shopbg.png"; 
+shop_Window.src = "./pictures/Shop/ShopBg.png"; 
 
 let car_2 = new Image(); 
 car_2.src = "./pictures/Shop/car2.png"
