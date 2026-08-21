@@ -72,30 +72,30 @@ const npcs = [];
 let openShop = false;
 
 let buyButton = new Image();
-buyButton.src = "../pictures/Shop/BUY_button.png";
+buyButton.src = "./pictures/Shop/BUY_button.png";
 
 
 let shop_Window = new Image();
-shop_Window.src = "../pictures/Shop/Shopbg.png"; 
+shop_Window.src = "./pictures/Shop/Shopbg.png"; 
 
 let car_2 = new Image(); 
-car_2.src = "../pictures/Shop/car2.png"
+car_2.src = "./pictures/Shop/car2.png"
 
 let car_3 = new Image(); 
-car_3.src = "../pictures/Shop/car3.png"
+car_3.src = "./pictures/Shop/car3.png"
 
 let car_4 = new Image(); 
-car_4.src = "../pictures/Shop/car4.png"
+car_4.src = "./pictures/Shop/car4.png"
 
 let car_5 = new Image(); 
-car_5.src = "../pictures/Shop/car5.png"
+car_5.src = "./pictures/Shop/car5.png"
 
 
 let car_6 = new Image(); 
-car_6.src = "../pictures/Shop/car6.png"
+car_6.src = "./pictures/Shop/car6.png"
 
 let car_7 = new Image(); 
-car_7.src = "../pictures/Shop/car7.png"
+car_7.src = "./pictures/Shop/car7.png"
 
 let num1 = 9
 
