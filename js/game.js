@@ -3,13 +3,13 @@ const ctx = canvas.getContext("2d");
 
 
 const bgImg = new Image();
-bgImg.src = "../pictures/bg.png"; 
+bgImg.src = "./pictures/bg.png"; 
 
 let carImg = new Image();
-carImg.src = "../pictures/car.png";
+carImg.src = "./pictures/car.png";
 
 const npcImg = new Image();
-npcImg.src = "../pictures/grayCar.png";
+npcImg.src = "./pictures/grayCar.png";
 
 
 
